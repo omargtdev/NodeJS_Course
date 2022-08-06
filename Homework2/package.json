@@ -1,0 +1,21 @@
+{
+  "name": "homework2",
+  "version": "1.0.0",
+  "description": "an simple express server",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "nodemon src/app"
+  },
+  "keywords": [
+    "nodejs",
+    "expressjs"
+  ],
+  "author": "omargtdev",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
