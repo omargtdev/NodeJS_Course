@@ -1,40 +1,32 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+import { join } from 'path';
 
-const routes = require('./routes');
+import express from 'express';
+import bodyParser from "body-parser";
+import cors from 'cors';
+import dotenv from 'dotenv';
+
+import routes from './routes';
+
+dotenv.config(); // Set enviroment variables
 
 const app = express();
 
-const PORT = 3000;
-const HOST = 'localhost';
+// Variables
+const { HOST, PORT } = process.env
+app.set('host', HOST);
+app.set('port', PORT);
 
-// Pages
-const GET_PAGES = ["/", "/about", "/contact", "/add-product"];
-const POST_REQUEST = ["/product"];
+app.set('viewsPath', join(__dirname, 'views'));
 
-const pageNotFound = (res) => {
-  res.send("<h1>Page Not Found</h1>");
-};
-
-/*************** Middlewares *********************/
-
+// Middlewares
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended : false }));
-
-app.use((req, res, next) => {
-  const { method, url } = req;
-
-  if (method === "GET") {
-    const isExistPage = GET_PAGES.includes(url);
-    return isExistPage ? next() : pageNotFound(res);
-  }
-
-  if (method === "POST") {
-    const isExistRequest = POST_REQUEST.includes(url);
-    return isExistRequest ? next() : next("Not request found -> ", url);
-  }
-}); /*********************************************/
 
 // Routes
 app.use(routes);
 
-app.listen(PORT, HOST, () => console.log(`Server called ${HOST} listen on port ${PORT}`))
+app.use((req, res, next) => { // For page that does not exists
+  res.status(404).sendFile(join(app.get('viewsPath'), '404.html'));
+});
+
+export default app;

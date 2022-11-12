@@ -1,9 +1,10 @@
-const router = require('express').Router();
+import { Router } from 'express';
+import adminRoutes from './admin';
+import shopRoutes from './shop';
 
-const admin = require('./admin');
-const shop = require('./shop');
+const router = Router();
 
-router.use(admin);
-router.use(shop);
+router.use('/admin', adminRoutes);
+router.use(shopRoutes);
 
-module.exports = router;
+export default router;

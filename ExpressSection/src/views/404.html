@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not found</title>
+    <style>
+        :root {
+            --bg-primary: #708f1a;
+            --ft-primray: #ffffff;
+            --ft-secondary: #65f0c6;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+        }
+
+        .main-header {
+            width: 100%;
+            height: 3.5rem;
+        }
+
+        .main-nav__list {
+            margin: 0;
+            padding: 1rem;
+            list-style-type: none;
+            background-color: var(--bg-primary);
+            display: flex;
+        }
+
+        .main-nav__list-item {
+            margin-right: 1rem;
+        }
+        
+        .main-nav__link {
+            text-decoration: none;
+            font-size: 20px;
+            color: var(--ft-primray);
+        }
+
+        .main-nav__link:hover,
+        .main-nav__link:active,
+        .main-nav__link--active {
+            color: var(--ft-secondary);
+        }
+
+        main {
+            padding: 0 2rem;
+        }
+
+        footer {
+            color: var(--ft-primray);
+            background-color: var(--bg-primary);
+        }
+
+        footer p {
+            margin: 0;
+            padding: 20px 0;
+        }
+        /* CONTENT STYLE */
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <nav class="main-nav">
+            <ul class="main-nav__list">
+                <li class="main-nav__list-item">
+                    <a class="main-nav__link" href="/">Shop</a>
+                </li>
+                <li class="main-nav__list-item">
+                    <a class="main-nav__link main-nav__link--active" href="/admin/add-product">Add product</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Content -->
+    <main>
+        <h1>Not found pipipi</h1>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p style="text-align: center;">Learning express project. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>
