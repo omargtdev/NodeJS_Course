@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title= pageTitle
+        // /* FONTS */
+        link(rel="preconnect", href="https://fonts.googleapis.com")
+        link(rel="preconnect", href="https://fonts.gstatic.com")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap")
+        // /* CONTENT STYLE */
+        link(rel="stylesheet", href="/css/main.css")
+        block styles
+    body 
+        // HEADER
+        header.main-header
+            nav.main-nav 
+                ul.main-nav__list 
+                    li.main-nav__list-item
+                        a.main-nav__link(href="/", class={ active: path === "/" }) Home 
+                    li.main-nav__list-item
+                        a.main-nav__link(href="/users", class={ active: path === "/users" }) Users
+        // CONTENT
+        block content 
+        // FOOTER
+        footer 
+            p(style="text-align: center") Learning express project. All rights reserved.
+        // /* SCRIPTS */
+        block scripts

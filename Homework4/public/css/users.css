@@ -1,0 +1,17 @@
+#users {
+    margin-left: 2em;
+}
+
+.user-list {
+    list-style: none;
+}
+
+.user-list__item::before {
+    content: ":D ";
+    color: var(--bg-primary);
+}
+
+.user-list__item--not-exists::before {
+    content: "D: ";
+    color: var(--ft-secondary);
+}

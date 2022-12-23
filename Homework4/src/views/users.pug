@@ -1,0 +1,17 @@
+extends layouts/main.pug
+
+block styles
+    link(rel="stylesheet", href="/css/users.css")
+
+block content
+    section#users
+        h3 Users registered
+        ul.user-list
+            each user in users 
+                li.user-list__item
+                    div 
+                        p Name: #{user.name}
+                        p Lastname: #{user.lastname}
+                        p Age: #{user.age}
+            else 
+                li.user-list__item.user-list__item--not-exists= "There are no users registered yet!"

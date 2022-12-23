@@ -1,0 +1,16 @@
+{
+    "error": {
+        "101": {
+            "code": 101,
+            "description": "Incomplete required parameters"
+        },
+        "102": {
+            "code": 102,
+            "description": "Invalid parameter. It must be an integer"
+        },
+        "103": {
+            "code": 103,
+            "description": "Invalid parameter. It cannot be empty"
+        }
+    }
+}
