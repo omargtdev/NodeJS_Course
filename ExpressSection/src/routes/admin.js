@@ -7,7 +7,7 @@ const router = Router();
 
 // admin/add-product
 router.get('/add-product', (req, res, next) => {
-  res.sendFile(join(app.get('viewsPath'), 'add-product.html'));
+  res.sendFile(join(app.get('views'), 'add-product.html'));
 }); // Add product 
 
 // admin/product
